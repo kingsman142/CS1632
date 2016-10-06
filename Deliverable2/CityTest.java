@@ -1,16 +1,19 @@
 import java.util.Random;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.mockito.*;
 
 public class CityTest{
 	//When a null value is passed into the getNewLocation() method,
 	//	a random location from [Hotel, Library, Coffee, Diner] should be chosen.
 	//This test stubs a Random object to make sure all output is possible.
 	//The expected/observed arrays are in the format [old location, new location, direction taken].
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void NullDirectionShouldReturnRandomLocation(){
 		City city = new City();
-		Random rand = new RandomStub(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(1);
 		String[] expected = { "Library", "Diner", null };
 		String[] observed = city.getNewLocation("Library", null, rand);
 
@@ -34,10 +37,12 @@ public class CityTest{
 	//When a null String object is passed as the current location
 	//	in getNewLocation(), a String[] of size 3 should be returned
 	//	containing all null values.
+	//Random class is mocked in this test.
 	@Test
 	public void NullCurrentLocationShouldReturnNullLocationData(){
 		City city = new City();
-		String[] observed = city.getNewLocation(null, "Bill St.", new Random());
+		Random rand = Mockito.mock(Random.class);
+		String[] observed = city.getNewLocation(null, "Bill St.", rand);
 		String[] expected = new String[] { null, null, null };
 
 		assertArrayEquals(null, expected, observed);
@@ -47,10 +52,12 @@ public class CityTest{
 	//	a String array should be returned where the old location and
 	//	new location are the same values; the direction is null.
 	//An invalid location means the driver should not move.
+	//Random class is mocked in this test.
 	@Test
 	public void InvalidCurrentLocationShouldReturnExistingLocationData(){
 		City city = new City();
-		String[] observed = city.getNewLocation("Banana Factory", "Bill St.", null);
+		Random rand = Mockito.mock(Random.class);
+		String[] observed = city.getNewLocation("Banana Factory", "Bill St.", rand);
 		String[] expected = new String[] { "Banana Factory", "Banana Factory", null };
 
 		assertArrayEquals(null, expected, observed);
@@ -61,10 +68,12 @@ public class CityTest{
 	//This test stubs a Random object to make sure the negatively random numbers are generated.
 	//The observed behavior should treat the random number -1 as +1 and access the respective
 	//	direction.
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void NewDirectionShouldHandleNegativeRandomValues(){
 		City city = new City();
-		Random rand = new RandomStub(new int[] {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10});
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(-1);
 		String expected = "Bill St.";
 		String observed = city.getNewDirection("Library", rand);
 
@@ -74,10 +83,12 @@ public class CityTest{
 	//When a valid location from [Hotel, Library, Coffee, Diner] is passed in,
 	//	there are only 2 possible streets each location can travel on.
 	//Return one of the 2 possible streets.
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void ValidCurrentLocationShouldReturnValidDirectionToTravel(){
 		City city = new City();
-		Random rand = new RandomStub(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(1);
 		String observed = city.getNewDirection("Hotel", rand);
 		String expected = "Bill St.";
 
@@ -115,10 +126,12 @@ public class CityTest{
 	//	for the new direction when the driver's current location is
 	//	Hotel, the only two directions possible are Fourth Ave.
 	//	and Bill St.
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void CurrentLocationIsHotelShouldReturnFourthAveAndBillStAsTwoValidDirections(){
 		City city = new City();
-		Random rand = new RandomStub(new int[] { 0, 1, 2, 3, 4, 5 });
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(0).thenReturn(1).thenReturn(2);
 
 		assertEquals("Fourth Ave.", city.getNewDirection("Hotel", rand));
 		assertEquals("Bill St.", city.getNewDirection("Hotel", rand));
@@ -128,10 +141,12 @@ public class CityTest{
 	//When a null current location String object is passed into the
 	//	getNewDirection() method, it should return a null String object
 	//	representing the new direction.
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void NullCurrentLocationShouldReturnNullDirection(){
 		City city = new City();
-		Random rand = new RandomStub(new int[] { 0, 1, 2, 3, 4, 5 });
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(0);
 
 		assertNull(city.getNewDirection(null, rand));
 	}

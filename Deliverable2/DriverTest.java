@@ -1,6 +1,7 @@
 import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.mockito.*;
 
 public class DriverTest{
 	//When a new driver is created, they should automatically start
@@ -61,10 +62,12 @@ public class DriverTest{
 	//	is accessed.
 	//Five drivers are created, the nextInt() Random method is stubbed,
 	//	and each driver's initial location is set.
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void InitialLocationShouldHaveOnlyFourPossibilities(){
 		Driver[] drivers = { new Driver(), new Driver(), new Driver(), new Driver(), new Driver() };
-		Random rand = new RandomStub(new int[] { 0, 1, 2, 3, 4 });
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(0).thenReturn(1).thenReturn(2).thenReturn(3).thenReturn(4);
 		Driver.setRandom(rand);
 
 		for(Driver d: drivers){
@@ -83,9 +86,10 @@ public class DriverTest{
 	//	object reference is grabbed, it should be the same.
 	//Assert that the reference for the Random object is the same
 	//	as what was fed into the program.
+	//Random class is mocked in this test.
 	@Test
 	public void SettingRandomSeedShouldReturnSameObjectReference(){
-		Random rand = new Random();
+		Random rand = Mockito.mock(Random.class);
 		Driver.setRandom(rand);
 		assertEquals(rand, Driver.getRandom());
 	}
@@ -141,11 +145,13 @@ public class DriverTest{
 	//	location, their number of cups of coffee should increment.
 	//Note: this test case is not covering when a driver's initial
 	//		location is set.
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void IfDriverVisitsCoffeeShopShouldIncrementCupsOfCoffee(){
 		Driver d = new Driver();
 		Random oldRand = d.getRandom(); //Placeholder for the Random object that was already there from other tests.
-		Random rand = new RandomStub(new int[] { 1, 1, 1, 1, 1 });
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(1);
 		Driver.setRandom(rand); //Set up stubbed Random
 		d.setInitialLocation();
 		d.moveDriver();
@@ -158,11 +164,13 @@ public class DriverTest{
 	//Note: this test case only covers when the initial location
 	//		is set, not when a driver travels from one location
 	//		to Coffee.
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void IfInitialLocationIsCoffeeShouldSetCupsOfCoffeeToOne(){
 		Driver d = new Driver();
 		Random oldRand = d.getRandom(); //Placeholder for the Random object that was already there from other tests.
-		Random rand = new RandomStub(new int[] { 3, 4, 5, 6, 7, 8, 9 });
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(3);
 		Driver.setRandom(rand); //Set up stubbed Random
 		d.setInitialLocation();
 		Driver.setRandom(oldRand); //Restore old Random
@@ -173,11 +181,13 @@ public class DriverTest{
 	//	new location should be the Diner.
 	//This test mocks the Driver and sets its initial location to
 	//	the Hotel.
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void IfCurrentLocationIsHotelAndMoveDriverAlongFourthAveShouldGoToDiner(){
 		Driver d = new Driver();
 		Random oldRand = d.getRandom();
-		Random rand = new RandomStub(new int[] { 0, 0, 2, 3, 4, 5, 6, 7, 8, 9 });
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(0).thenReturn(0);
 		Driver.setRandom(rand);
 
 		assertTrue( d.setInitialLocation() ); //Mock the driver's current scenario of being at Hotel
@@ -194,11 +204,13 @@ public class DriverTest{
 	//	location should be the Library.
 	//This test mocks the Driver and sets its initial location to
 	//	the Hotel.
+	//Mocking and stubbing of the Random class are used in this test.
 	@Test
 	public void IfCurrentLocationIsHotelAndMoveDriverShouldNotGoToAnyLocationBesidesDinerAndLibrary(){
 		Driver d = new Driver();
 		Random oldRand = d.getRandom();
-		Random rand = new RandomStub(new int[] { 0, 0, 0, 1, 0, 0, 6, 7, 8, 9 });
+		Random rand = Mockito.mock(Random.class);
+		Mockito.when(rand.nextInt()).thenReturn(0).thenReturn(0).thenReturn(0).thenReturn(1);
 		Driver.setRandom(rand);
 
 		assertTrue( d.setInitialLocation() ); //Mock the driver's current scenario of being at Hotel
