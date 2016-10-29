@@ -58,7 +58,7 @@ public class RubyCompilerTest {
         List<WebElement> commitButtons = driver.findElements(By.name("commit"));
         WebElement parseButton = null;
 
-        //Find the commit button with the value "Tokenize"
+        //Find the commit button with the value "Parse"
         for(WebElement element : commitButtons){
             String elementValue = element.getAttribute("value");
             if(elementValue.equals("Parse")){
@@ -87,5 +87,44 @@ public class RubyCompilerTest {
         driver.get("http://lit-bayou-7912.herokuapp.com/");
         String pageTitle = driver.getTitle();
         assertEquals("Hoodpopper", pageTitle);
+    }
+
+    //When a user clicks the "Back" link on the Tokenize,
+    //  Parse, or Compile pages, the website should redirected
+    //  the user to the homepage.
+    @Test
+    public void BackLinkTakesUserToHomepage(){
+        //Navigate to the homepage and enter text into the code area
+        driver.get("http://lit-bayou-7912.herokuapp.com/");
+        String codeText = "a = 5";
+        WebElement codeArea = driver.findElement(By.id("code_code"));
+        codeArea.sendKeys(codeText);
+
+        //Find all "commit" buttons on the page
+        List<WebElement> commitButtons = driver.findElements(By.name("commit"));
+        WebElement tokenizeButton = null;
+
+        //Find the commit button with the value "Tokenize"
+        for(WebElement element : commitButtons){
+            String elementValue = element.getAttribute("value");
+            if(elementValue.equals("Tokenize")){
+                tokenizeButton = element;
+                break;
+            }
+        }
+
+        //Make sure the button has been found
+        assertNotNull(tokenizeButton);
+
+        //This navigates to the tokenize page
+        tokenizeButton.click();
+
+        //Find the Back link and click it
+        WebElement backLink = driver.findElement(By.linkText("Back"));
+        backLink.click();
+        System.out.println("url: " + driver.getCurrentUrl());
+        String textInCodeArea = driver.findElement(By.id("code_code")).getText();
+
+        //assertEquals(codeText, textInCodeArea);
     }
 }
