@@ -19,7 +19,7 @@ public class RubyCompilerTestRunner {
     	    Result r = JUnitCore.runClasses(c);
 
     	    // Print out any failures for this class.
-            System.out.println("-----------------------------------------------------------");
+            System.out.println("\n-----------------------------------------------------------\n");
     	    for (Failure f : r.getFailures()) {
     		    System.out.println(f.toString());
     	    }
