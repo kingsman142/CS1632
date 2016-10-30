@@ -71,11 +71,12 @@ public class RubyCompilerTest {
         //Make sure the button has been found
         assertNotNull(parseButton);
         parseButton.click();
-        List<WebElement> codeBlocks = driver.findElements(By.tagName("code"));
+        List<WebElement> codeBlocks = driver.findElements(By.tagName("p"));
         String firstCodeBlock = codeBlocks.get(0).getText();
         String secondCodeBlock = codeBlocks.get(1).getText();
+        
         assertEquals("program\n[[:void_stmt]]", firstCodeBlock);
-        //assertEquals("program --void_stmt", secondCodeBlock);
+        assertEquals("program\n--void_stmt", secondCodeBlock);
     }
 
     //When a user enters the home page of the Ruby compiler
