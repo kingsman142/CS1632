@@ -70,7 +70,7 @@ public class RubyCompilerTest {
 
         //Make sure the button has been found
         assertNotNull(parseButton);
-        
+
         parseButton.click();
 
         List<WebElement> codeBlocks = driver.findElements(By.tagName("p"));
@@ -124,11 +124,8 @@ public class RubyCompilerTest {
         //Find the Back link and click it
         WebElement backLink = driver.findElement(By.linkText("Back"));
         backLink.click();
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        System.out.println("url: " + driver.getCurrentUrl());
-        String textInCodeArea = driver.findElement(By.id("code_code")).getAttribute("value");
 
-        assertEquals(codeText, textInCodeArea);
+        assertEquals("http://lit-bayou-7912.herokuapp.com/hoodpop#", driver.getCurrentUrl());
     }
 
     @Test
