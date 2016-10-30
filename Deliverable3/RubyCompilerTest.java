@@ -370,4 +370,10 @@ public class RubyCompilerTest {
         WebElement codeArea = driver.findElement(By.id("code_code"));
         assertTrue(codeArea.isEnabled());
     }
+
+    //Close the driver properly
+    @After
+    public void ExitTheDriver(){
+        driver.quit();
+    }
 }
