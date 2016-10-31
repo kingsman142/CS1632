@@ -6,10 +6,7 @@ import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-<<<<<<< HEAD
-=======
 //import org.openqa.selenium.firefox.FirefoxDriver;
->>>>>>> 9dc90e18c9e5f78d2b69a2baac3b44b163fed671
 import java.util.*;
 
 public class RubyCompilerTest {
@@ -132,12 +129,9 @@ public class RubyCompilerTest {
         assertEquals("http://lit-bayou-7912.herokuapp.com/hoodpop#", driver.getCurrentUrl());
     }
 
-<<<<<<< HEAD
     //When correctly setting a variable to an integer,
     //  the application should output three tokens
     //  after tokenization.
-=======
->>>>>>> 9dc90e18c9e5f78d2b69a2baac3b44b163fed671
     @Test
     public void SettingAVariableToAnIntegerWithoutSpacesShouldHaveThreeTokens(){
         //Navigate to the homepage and enter text into the code area
@@ -279,13 +273,10 @@ public class RubyCompilerTest {
         assertEquals("[[1, 0], :on_int, \"5\"]", tokenizeOutput);
     }
 
-<<<<<<< HEAD
     //When a user assigns two variables and then adds
     //  those two variables into another variable, such as
     //  a=3, b=2, c=a+b, and compiles the code, it should
     //  return a table of size 4 and 23 bytes of instructions.
-=======
->>>>>>> 9dc90e18c9e5f78d2b69a2baac3b44b163fed671
     @Test
     public void AssigningTwoVariablesAndAddingTogetherShouldDisplayATableOfSizeFourAndTwentryThreeBytesOfInstructions(){
         driver.get("http://lit-bayou-7912.herokuapp.com/");
@@ -387,9 +378,7 @@ public class RubyCompilerTest {
         WebElement codeArea = driver.findElement(By.id("code_code"));
         assertTrue(codeArea.isEnabled());
     }
-<<<<<<< HEAD
-=======
-    
+
     // When the user is on the homepage of the website,
     //  Entering text after a pound sign "#" should be treated as a comment,
     // and ignored by the compiler
@@ -426,7 +415,7 @@ public class RubyCompilerTest {
 							"0000 putnil ( 2)\n" +
 							"0001 leave", compiledOutput);
     }
-    
+
     // When a user is on the homepage and enters a comment, such
     //  as "# puts \"This line is a comment, and is ignored by the compiler",
     // and clicks the "Tokenize" button, the output
@@ -504,9 +493,6 @@ public class RubyCompilerTest {
         assertEquals("program\n[[:void_stmt]]", firstCodeBlock);
         assertEquals("program\n--void_stmt", secondCodeBlock);
     }
-
-
->>>>>>> 9dc90e18c9e5f78d2b69a2baac3b44b163fed671
 
     //Close the driver properly
     @After
