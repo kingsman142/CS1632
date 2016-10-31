@@ -6,7 +6,6 @@ import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-//import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.*;
 
 public class RubyCompilerTest {
@@ -412,7 +411,7 @@ public class RubyCompilerTest {
         String compiledOutput = codeBlock.getText();
 
         assertEquals("== disasm: <RubyVM::InstructionSequence:<compiled>@<compiled>>==========\n" +
-							"0000 putnil ( 2)\n" +
+							"0000 putnil ( 1)\n" +
 							"0001 leave", compiledOutput);
     }
 
@@ -451,7 +450,7 @@ public class RubyCompilerTest {
         WebElement codeBlock = driver.findElement(By.tagName("code"));
         String tokenizeOutput = codeBlock.getText();
 
-        assertEquals("[[1, 0], :on_comment, \"# puts \\\\\\\"This line is a comment, and is ignored by the compiler\\\"\"]", tokenizeOutput);
+        assertEquals("[[1, 0], :on_comment, \"# puts \\\"This line is a comment, and is ignored by the compiler\"]", tokenizeOutput);
     }
 
     //  When a user is on the front page and clicks the "Parse"
