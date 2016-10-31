@@ -128,6 +128,9 @@ public class RubyCompilerTest {
         assertEquals("http://lit-bayou-7912.herokuapp.com/hoodpop#", driver.getCurrentUrl());
     }
 
+    //When correctly setting a variable to an integer,
+    //  the application should output three tokens
+    //  after tokenization.
     @Test
     public void SettingAVariableToAnIntegerWithoutSpacesShouldHaveThreeTokens(){
         //Navigate to the homepage and enter text into the code area
@@ -269,6 +272,10 @@ public class RubyCompilerTest {
         assertEquals("[[1, 0], :on_int, \"5\"]", tokenizeOutput);
     }
 
+    //When a user assigns two variables and then adds
+    //  those two variables into another variable, such as
+    //  a=3, b=2, c=a+b, and compiles the code, it should
+    //  return a table of size 4 and 23 bytes of instructions.
     @Test
     public void AssigningTwoVariablesAndAddingTogetherShouldDisplayATableOfSizeFourAndTwentryThreeBytesOfInstructions(){
         driver.get("http://lit-bayou-7912.herokuapp.com/");
