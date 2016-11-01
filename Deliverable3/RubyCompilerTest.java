@@ -378,9 +378,9 @@ public class RubyCompilerTest {
         assertTrue(codeArea.isEnabled());
     }
 
-    // When the user is on the homepage of the website,
+    //When the user is on the homepage of the website,
     //  Entering text after a pound sign "#" should be treated as a comment,
-    // and ignored by the compiler
+    //  and ignored by the compiler
 	@Test
 	public void CompilingRubyCodeWithCommentShouldBeIgnoredByCompiler(){
         driver.get("http://lit-bayou-7912.herokuapp.com/");
@@ -415,12 +415,12 @@ public class RubyCompilerTest {
 							"0001 leave", compiledOutput);
     }
 
-    // When a user is on the homepage and enters a comment, such
+    //When a user is on the homepage and enters a comment, such
     //  as "# puts \"This line is a comment, and is ignored by the compiler",
-    // and clicks the "Tokenize" button, the output
+    //  and clicks the "Tokenize" button, the output
     //  should display one line stating:
-    // "[[1, 0], :on_comment, "# puts \\\"This line is a comment, and is ignored by the compiler\""]"
-    // with a comment or "on_comment".
+    //  "[[1, 0], :on_comment, "# puts \\\"This line is a comment, and is ignored by the compiler\""]"
+    //  with a comment or "on_comment".
     @Test
     public void CodingRubyCommentShouldShowUpAsCommentAfterTokenization(){
         driver.get("http://lit-bayou-7912.herokuapp.com/");
@@ -453,11 +453,11 @@ public class RubyCompilerTest {
         assertEquals("[[1, 0], :on_comment, \"# puts \\\"This line is a comment, and is ignored by the compiler\"]", tokenizeOutput);
     }
 
-    //  When a user is on the front page and clicks the "Parse"
+    //When a user is on the front page and clicks the "Parse"
     //  button witha comment entered into the code text area,
     //  they should be redirected to a new page with the basic
     //  templated for parsed code.
-    // In this case, the user should see two <code> elements
+    //In this case, the user should see two <code> elements
     //  containing text relating to void_stmt, the default
     //  template that the compiler feeds to the user.
     @Test
@@ -492,10 +492,193 @@ public class RubyCompilerTest {
         assertEquals("program\n[[:void_stmt]]", firstCodeBlock);
         assertEquals("program\n--void_stmt", secondCodeBlock);
     }
+	
+	//When a user assigns two String variables and then concatenates
+    //  those two Strings into a print out (puts), such as
+    //  a="Hello, ", b="World!", puts a+b, and compiles the code, it should
+    //  return a table of size 3 and 23 bytes of instructions.
+    @Test
+    public void AssigningTwoStringsAndConcatenatingThemTogetherShouldDisplayATableOfSizeThreeAndTwentryThreeBytesOfInstructions(){
+        driver.get("http://lit-bayou-7912.herokuapp.com/");
+        String codeText = "a=\"Hello, \"\nb =\"World!\"\nputs a+b";
+        WebElement codeArea = driver.findElement(By.id("code_code"));
+        codeArea.sendKeys(codeText);
 
+        //Find all "commit" buttons on the page
+        List<WebElement> commitButtons = driver.findElements(By.name("commit"));
+        WebElement compileButton = null;
+
+        //Find the commit button with the value "Compile"
+        for(WebElement element : commitButtons){
+            String elementValue = element.getAttribute("value");
+            if(elementValue.equals("Compile")){
+                compileButton = element;
+                break;
+            }
+        }
+
+        //Make sure the button has been found
+        assertNotNull(compileButton);
+
+        //This navigates to the tokenize page
+        compileButton.click();
+
+        WebElement codeBlock = driver.findElement(By.tagName("code"));
+        String compiledOutput = codeBlock.getText();
+
+        //Find the size of the table
+        int sizeIndex = compiledOutput.indexOf("size: ");
+        if(compiledOutput.charAt(sizeIndex+6) != '3'){
+            fail();
+        }
+
+        //Make sure the compiled code is correctly output when performing several assignments
+        assertEquals("== disasm: <RubyVM::InstructionSequence:<compiled>@<compiled>>==========\n" +
+									"local table (size: 3, argc: 0 [opts: 0, rest: -1, post: 0, block: -1] s1)\n" +
+									"[ 3] a [ 2] b\n" +
+									"0000 trace 1 ( 1)\n" +
+									"0002 putstring \"Hello, \"\n" +
+									"0004 setlocal_OP__WC__0 3\n" +
+									"0006 trace 1 ( 2)\n" +
+									"0008 putstring \"World!\"\n" +
+									"0010 setlocal_OP__WC__0 2\n" +
+									"0012 trace 1 ( 3)\n" +
+									"0014 putself\n" +
+									"0015 getlocal_OP__WC__0 3\n" +
+									"0017 getlocal_OP__WC__0 2\n" +
+									"0019 opt_plus <callinfo!mid:+, argc:1, ARGS_SKIP>\n" +
+									"0021 opt_send_simple <callinfo!mid:puts, argc:1, FCALL|ARGS_SKIP>\n" +
+									"0023 leave", compiledOutput);
+    }
+
+	
+	
+	//When a user assigns three variables of mixed Strings and Numbers and then concatenates
+    //  those two variables into a print out (puts), such as
+    //  a="October is month number: ", b=10, puts a+b, c=2+b, puts c; and compiles the code, it should
+    //  return a table of size 4 and 41 bytes of instructions.
+    @Test
+    public void AssignThreeVariablesBehaveAsStringOrNumericPerContextDisplayATableOfSizeFourAndFortyOneBytesOfInstructions(){
+        driver.get("http://lit-bayou-7912.herokuapp.com/");
+        String codeText = "a=\"October is month number: \"\nb=10\nputs a+b\nc=2+b\nputs c";
+        WebElement codeArea = driver.findElement(By.id("code_code"));
+        codeArea.sendKeys(codeText);
+
+        //Find all "commit" buttons on the page
+        List<WebElement> commitButtons = driver.findElements(By.name("commit"));
+        WebElement compileButton = null;
+
+        //Find the commit button with the value "Compile"
+        for(WebElement element : commitButtons){
+            String elementValue = element.getAttribute("value");
+            if(elementValue.equals("Compile")){
+                compileButton = element;
+                break;
+            }
+        }
+
+        //Make sure the button has been found
+        assertNotNull(compileButton);
+
+        //This navigates to the tokenize page
+        compileButton.click();
+
+        WebElement codeBlock = driver.findElement(By.tagName("code"));
+        String compiledOutput = codeBlock.getText();
+
+        //Find the size of the table
+        int sizeIndex = compiledOutput.indexOf("size: ");
+        if(compiledOutput.charAt(sizeIndex+6) != '4'){
+            fail();
+        }
+
+        //Make sure the compiled code is correctly output when performing several assignments
+        assertEquals("== disasm: <RubyVM::InstructionSequence:<compiled>@<compiled>>==========\n" +
+						"local table (size: 4, argc: 0 [opts: 0, rest: -1, post: 0, block: -1] s1)\n" +
+						"[ 4] a [ 3] b [ 2] c\n" +
+						"0000 trace 1 ( 1)\n" +
+						"0002 putstring \"October is month number: \"\n" +
+						"0004 setlocal_OP__WC__0 4\n" +
+						"0006 trace 1 ( 2)\n" +
+						"0008 putobject 10\n" +
+						"0010 setlocal_OP__WC__0 3\n" +
+						"0012 trace 1 ( 3)\n" +
+						"0014 putself\n" +
+						"0015 getlocal_OP__WC__0 4\n" +
+						"0017 getlocal_OP__WC__0 3\n" +
+						"0019 opt_plus <callinfo!mid:+, argc:1, ARGS_SKIP>\n" +
+						"0021 opt_send_simple <callinfo!mid:puts, argc:1, FCALL|ARGS_SKIP>\n" +
+						"0023 pop\n" +
+						"0024 trace 1 ( 4)\n" +
+						"0026 putobject 2\n" +
+						"0028 getlocal_OP__WC__0 3\n" +
+						"0030 opt_plus <callinfo!mid:+, argc:1, ARGS_SKIP>\n" +
+						"0032 setlocal_OP__WC__0 2\n" +
+						"0034 trace 1 ( 5)\n" +
+						"0036 putself\n" +
+						"0037 getlocal_OP__WC__0 2\n" +
+						"0039 opt_send_simple <callinfo!mid:puts, argc:1, FCALL|ARGS_SKIP>\n" +
+						"0041 leave", compiledOutput);
+    }
+	
+	
+	//When a user assigns two String variables and then concatenates
+    //  those two Strings into a print out (puts), such as
+    //  a="Hello, ", b="World!", puts a+b, and tokenizes the code, 
+    //  they should be redirected to a new page with the tokenized
+    //  code.
+    @Test
+    public void AClickingTokenizeButtonWithNoCodeShouldReturnEmptyCodeBlock() {
+        driver.get("http://lit-bayou-7912.herokuapp.com/");
+        String codeText = "a=\"Hello, \"\nb=\"World!\"\nputs a+b";
+        WebElement codeArea = driver.findElement(By.id("code_code"));
+        codeArea.sendKeys(codeText);
+
+        //Find all "commit" buttons on the page
+        List<WebElement> commitButtons = driver.findElements(By.name("commit"));
+        WebElement tokenizeButton = null;
+
+        //Find the commit button with the value "Tokenize"
+        for(WebElement element : commitButtons){
+            String elementValue = element.getAttribute("value");
+            if(elementValue.equals("Tokenize")){
+                tokenizeButton = element;
+                break;
+            }
+        }
+
+        //Make sure the button has been found
+        assertNotNull(tokenizeButton);
+
+        tokenizeButton.click();
+
+        WebElement codeBlock = driver.findElement(By.tagName("code"));
+        String codeBlockText = codeBlock.getText();
+
+        assertEquals("[[1, 0], :on_ident, \"a\"]\n" +
+						"[[1, 1], :on_op, \"=\"]\n" +
+						"[[1, 2], :on_tstring_beg, \"\\\"\"]\n" +
+						"[[1, 3], :on_tstring_content, \"Hello, \"]\n" +
+						"[[1, 10], :on_tstring_end, \"\\\"\"]\n" +
+						"[[1, 11], :on_nl, \"\\r\\n\"]\n" +
+						"[[2, 0], :on_ident, \"b\"]\n" +
+						"[[2, 1], :on_op, \"=\"]\n" +
+						"[[2, 2], :on_tstring_beg, \"\\\"\"]\n" +
+						"[[2, 3], :on_tstring_content, \"World!\"]\n" +
+						"[[2, 9], :on_tstring_end, \"\\\"\"]\n" +
+						"[[2, 10], :on_nl, \"\\r\\n\"]\n" +
+						"[[3, 0], :on_ident, \"puts\"]\n" +
+						"[[3, 4], :on_sp, \" \"]\n" +
+						"[[3, 5], :on_ident, \"a\"]\n" +
+						"[[3, 6], :on_op, \"+\"]\n" +
+						"[[3, 7], :on_ident, \"b\"]",  codeBlockText);
+    }
+	
+	
     //Close the driver properly
     @After
     public void ExitTheDriver(){
         driver.quit();
     }
 }
+    

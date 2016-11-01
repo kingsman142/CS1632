@@ -1,0 +1,76 @@
+H:\Deliverable3>javac -cp .;./junit-4.12.jar;./hamcrest-core-1.3.jar;./selenium-java-2.52.0.jar;./selenium-server-standalone-2.52.0.jar *.java
+
+H:\Deliverable3>java -cp .;./junit-4.12.jar;./hamcrest-core-1.3.jar;./selenium-java-2.52.0.jar;./selenium-server-standalone-2.52.0.jar RubyCompilerTestRunner
+Oct 31, 2016 9:46:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:57 PM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {}->http://lit-bayou-7912.herokuapp.com:80: Permission denied: connect
+Oct 31, 2016 9:46:57 PM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {}->http://lit-bayou-7912.herokuapp.com:80
+Oct 31, 2016 9:46:57 PM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {}->http://lit-bayou-7912.herokuapp.com:80: Permission denied: connect
+Oct 31, 2016 9:46:57 PM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {}->http://lit-bayou-7912.herokuapp.com:80
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+Oct 31, 2016 9:46:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+WARNING: CSS error: 'http://lit-bayou-7912.herokuapp.com/assets/application-96a552b03ca0e7ebcbfc44b89ca097a6.css' [1:1] Error in style sheet. (Invalid token "<". Was expecting one of: <EOF>, <S>, <IDENT>, "<!--", "-->", ".", ":", "*", "[", <HASH>, <IMPORT_SYM>, <PAGE_SYM>, <MEDIA_SYM>, <FONT_FACE_SYM>, <CHARSET_SYM>, <ATKEYWORD>.)
+
+-----------------------------------------------------------
+
+
+ALL TESTS PASSED
+
+H:\Deliverable3>
