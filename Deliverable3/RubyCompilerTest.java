@@ -628,7 +628,7 @@ public class RubyCompilerTest {
     //  they should be redirected to a new page with the tokenized
     //  code.
     @Test
-    public void AClickingTokenizeButtonWithNoCodeShouldReturnEmptyCodeBlock() {
+    public void ClickingTokenizeButtonWithTwoStringsConcatenatedShouldReturnEachStringAsOn_IdentInCodeBlock() {
         driver.get("http://lit-bayou-7912.herokuapp.com/");
         String codeText = "a=\"Hello, \"\nb=\"World!\"\nputs a+b";
         WebElement codeArea = driver.findElement(By.id("code_code"));
